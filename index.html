@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/fontawesome/css/solid.css">
+    <link rel="stylesheet" href="/css/fontawesome/css/fontawesome.css">
+    <script src="/js/app.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+<body>
+    <header class="header_desktop container-fluid">
+        <div class="container d-flex flex-row align-items-center">
+            <div class="col-md-3 text-center">
+                <!-- Logo -->
+                <a href="" class="logo-link">
+                    <img src="http://localhost:8080/images/logo.png" class="logo_desktop" />
+                </a>
+            </div>
+    
+            <div class="col-md-6 text-center">
+                <!--Search bar-->
+                <div class="search-bar col-12">
+                    <form action="" class="search-form flex-row">
+                        <button type="submit" class="col-2 search-button">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                        <input type="text" class="search-field col-10" placeholder="Searching...">
+                    </form>
+                </div>
+            </div>
+    
+            <div class="col-md-3 text-center">
+                <!--User-->
+                <div class="user-nav">
+                    <a onclick="openUserBar()" class="btn user-link">
+                        <i class="fa-solid fa-user"></i>
+                        Tai Duong
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header class="header_mobile container-fluid flex-row align-items-center">
+        <div class="col-4">
+            <!-- Menu Button -->
+            <span class="menu-bar text-white" onclick="openMenuBar()" id="side-bar-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+        </div>
+        <div class="col-4 text-center ">
+            <!-- Logo Mobile -->
+            <a href="" class="logo-link">
+                <img src="http://192.168.1.19:8080/images/logo.png" class="logo_mobile" />
+            </a>
+        </div>
+        <div class="col-4 text-end">
+            <!-- User Button -->
+            <a id="user-btn" class="user-link">
+                        <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+    </header>
+
+    <div id="side-bar">
+        <div class="search-bar-mobile col-12">
+            <form action="" class="search-form-mobile flex-row">
+                <button type="submit" class="col-2 search-button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <input type="text" class="search-field col-10" placeholder="Searching...">
+               
+            </form>
+            <div class="search-content-ajax d-flex flex-column mt-2">
+                <div class="row-content-search mt-2">
+    
+                </div>
+                <div class="row-content-search mt-2">
+                    
+                </div>
+                 <div class="row-content-search mt-2">
+                    
+                </div>
+                <div class="row-content-search mt-2">
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        <span onclick="closeSideBar()" id="close-sidebar">
+            <i class="fa-solid fa-xmark"></i>
+        </span>
+    </div>
+
+
+    <div id="user-infor-tab" class="user-infor-tab">
+        <div class="container flex-column d-flex col-12">
+            <h3 class="align-self-center mt-5 text-white">Profile Info</h3>
+            <div class="user-info-panel d-flex flex-column mt-5 col-12">
+                <div class="user-image m-auto" style="background-image: url(http://192.168.1.19:8080/images/bg-2.jpg);"></div>
+                <div class="user-inner flex-column p-5 col-md-8 col-12 offset-md-2">
+                    <h4 class="user-f_name">Duong Tai</h4>
+                    <span class="user-informations"><i class="fa-solid fa-id-card"></i> duongtai264</span>
+                    <span class="user-informations"><i class="fa-solid fa-at"></i> taiduong@gmail.com</span>
+                    <span class="user-informations"><i class="fa-solid fa-venus-double"></i> Man</span>
+                    
+                    <a href="update.html" class="btn-update-info update">Update Information</a>
+                    <button onclick="closeUserBar()" class="btn-update-info cancel bg-warning">Canel</button>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/fontawesome/css/solid.css">
+    <link rel="stylesheet" href="/css/fontawesome/css/fontawesome.css">
+    <script src="/js/app.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+<body>
+    <header class="header_desktop container-fluid">
+        <div class="container d-flex flex-row align-items-center">
+            <div class="col-md-3 text-center">
+                <!-- Logo -->
+                <a href="" class="logo-link">
+                    <img src="http://localhost:8080/images/logo.png" class="logo_desktop" />
+                </a>
+            </div>
+    
+            <div class="col-md-6 text-center">
+                <!--Search bar-->
+                <div class="search-bar col-12">
+                    <form action="" class="search-form flex-row">
+                        <button type="submit" class="col-2 search-button">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                        <input type="text" class="search-field col-10" placeholder="Searching...">
+                    </form>
+                </div>
+            </div>
+    
+            <div class="col-md-3 text-center">
+                <!--User-->
+                <div class="user-nav">
+                    <a onclick="openUserBar()" class="btn user-link">
+                        <i class="fa-solid fa-user"></i>
+                        Tai Duong
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header class="header_mobile container-fluid flex-row align-items-center">
+        <div class="col-4">
+            <!-- Menu Button -->
+            <span class="menu-bar text-white" onclick="openMenuBar()" id="side-bar-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+        </div>
+        <div class="col-4 text-center ">
+            <!-- Logo Mobile -->
+            <a href="" class="logo-link">
+                <img src="http://192.168.1.19:8080/images/logo.png" class="logo_mobile" />
+            </a>
+        </div>
+        <div class="col-4 text-end">
+            <!-- User Button -->
+            <a id="user-btn" class="user-link">
+                        <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+    </header>
+
+    </div>
+
+    <div class="form-update-user col-md-6 offset-md-3 col-12 d-flex flex-column align-items-center">
+        <h4 class="update-heading mt-3 text-white">Update user information</h4>
+        <div class="form-wrapper col-12 d-flex">
+            <div class="update-image-profile col-12 col-md-6">
+                <div class="user-image image-update m-auto" style="background-image: url(http://192.168.1.19:8080/images/bg-2.jpg);">
+                    <a class="btn col-12 text-center pick-image text-white"><i class="fa-solid fa-camera"></i> Select Image</a>
+                </div>
+                    
+            </div>
+            <div class="col-12 col-md-6 update-content">
+                <form action="" class="update-form form-group d-flex flex-column mt-3" method="POST">
+                    <input type="text" class="form-control" placeholder="Full name">
+                    <input type="email" class="form-control" placeholder="Email">
+                    <select class="form-control" id="gender" th:value="${user.gender}" name="gender">
+                        <option value="" name="gender" hidden>Gender</option>
+                        <option value="1" >Male</option>
+                        <option value="2" >Female</option>
+                        <option value="3" >Unknown</option>
+                    </select>
+                    <input type="password" class="form-control" placeholder="Password">
+                    <input class="form-control btn btn-secondary mt-3 p-2" type="submit" name="submit" value="Save" />
+                </form>
+            </div>
+        </div>
+        
+        
+    </div>
+
+   
+</body>
+</html>
