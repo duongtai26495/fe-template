@@ -71,13 +71,17 @@
     <div class="form-update-user col-md-6 offset-md-3 col-12 d-flex flex-column align-items-center">
         <h4 class="update-heading mt-3 text-white">Update user information</h4>
         <div class="form-wrapper col-12 d-flex">
-            <div class="update-image-profile col-12 col-md-6">
-                <div class="user-image image-update m-auto" style="background-image: url(http://192.168.1.19:8080/images/bg-2.jpg);">
-                    <a class="btn col-12 text-center pick-image text-white"><i class="fa-solid fa-camera"></i> Select Image</a>
-                </div>
+            <div class="update-image-profile col-12 col-md-4 offset-md-2">
+                <div id="image-selected" class="user-image image-update m-auto" style="background-image: url(http://192.168.1.19:8080/images/bg-2.jpg);">
+                    <form action="" enctype="multipart/form-data">
+                        <label id="label_upload"  for="img_avt" class="btn col-12 text-center pick-image text-white">
+                            <i class="fa-solid fa-camera"></i> Select Image</label>
+                        <input id="img_avt" type="file" onchange="uploadImage(this)"/>
+                    </form>
                     
+                </div>
             </div>
-            <div class="col-12 col-md-6 update-content">
+            <div class="col-12 col-md-4 update-content">
                 <form action="" class="update-form form-group d-flex flex-column mt-3" method="POST">
                     <input type="text" class="form-control" placeholder="Full name">
                     <input type="email" class="form-control" placeholder="Email">
@@ -87,13 +91,14 @@
                         <option value="2" >Female</option>
                         <option value="3" >Unknown</option>
                     </select>
+                    <input hidden id="url_image_selected" class="form-control" name="profile_image" />
                     <input type="password" class="form-control" placeholder="Password">
                     <input class="form-control btn btn-secondary mt-3 p-2" type="submit" name="submit" value="Save" />
                 </form>
             </div>
         </div>
-        
-        
+        <h4 class="result text-success"><i class="fa-solid fa-face-laugh-wink"></i> User update success</h4>
+        <h4 class="result text-warning"><i class="fa-solid fa-face-sad-cry"></i> User update failed</h4>
     </div>
 
    

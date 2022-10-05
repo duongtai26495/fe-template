@@ -98,10 +98,11 @@ body{
     height: 200px;
     border-radius: 50%;
     background-color: black;
-    background-position: 50% 100%;
+    background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    overflow: hidden;
 }
 .user-inner{
     display: flex;
@@ -131,7 +132,16 @@ body{
 .pick-image{
     position: absolute;
     bottom: 0px;
+    padding-bottom: 20px;
+    font-size: 12px!important;
+    background-color: rgba(0,0,0,.5)!important;
     
+}
+.pick-image:hover{
+    color:var(--primary-color)!important;
+}
+#img_avt{
+    display: none;
 }
 /* End update user information */
 
