@@ -143,9 +143,37 @@ body{
 #img_avt{
     display: none;
 }
-/* End update user information */
 
+
+/* End update user information */
+/* Top Component */
+
+.top_component_inner{
+    border:1px solid gray;
+    border-radius: 10px;
+
+}
+.form-sort option {
+    background: black!important;
+}
+/* End Top component */
+
+/* Diary row */
+
+.diary-row{
+    background-color:var(--primary-color);
+    border-radius: 5px;
+    border:1px solid gray;
+    color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+/* End Diary row */
 @media only screen and (max-width: 1024px) {
+    .top_component_inner{
+       font-size: 15px;
+    }
     .form-wrapper{
         flex-direction: column;
     }

@@ -98,24 +98,40 @@
     </div>
 
 
-    <div id="user-infor-tab" class="user-infor-tab">
-        <div class="container flex-column d-flex col-12">
-            <h3 class="align-self-center mt-5 text-white">Profile Info</h3>
-            <div class="user-info-panel d-flex flex-column mt-5 col-12">
-                <div class="user-image m-auto" style="background-image: url(http://192.168.1.19:8080/images/bg-2.jpg);"></div>
-                <div class="user-inner flex-column p-5 col-md-8 col-12 offset-md-2">
-                    <h4 class="user-f_name">Duong Tai</h4>
-                    <span class="user-informations"><i class="fa-solid fa-id-card"></i> duongtai264</span>
-                    <span class="user-informations"><i class="fa-solid fa-at"></i> taiduong@gmail.com</span>
-                    <span class="user-informations"><i class="fa-solid fa-venus-double"></i> Man</span>
-                    
-                    <a href="update.html" class="btn-update-info update">Update Information</a>
-                    <button onclick="closeUserBar()" class="btn-update-info cancel bg-warning">Canel</button>
+    <div class="container top_component ">
+        <div class="top_component_inner d-flex flex-row col-md-6 col-12 offset-md-3 p-2 mt-3 text-white  align-items-center">
+            <div class="col-4 p-1 ">
+                <form class="d-flex col-12 form-sort" th:action="@{/?sort={sort}}">
+                    Sort:
+                    <select onchange="this.form.submit()" class="form-sort" id="sort" name="sort">
+                            <option th:each="sort : ${sorts}" th:text="${sort}" th:value="${sort}" th:selected="${sorted} == ${sort}"></option>
+                    </select>
+                </form>
+            </div>
+            <div class="col-4 p-1 text-center">
+                <span class="total_count" th:text="'Found : '+ ${#lists.size(diaries)} + ' diaries'"></span>
+            </div>
+            <div class="col-4 p-1 text-end">
+                <a class="btn btn-dark text-white" th:href="@{/diary/new}">New Diary</a>
+            </div>
+
+
+        </div>
+        <div class="diary-list-wrapper">
+            <div class=" col-md-6 offset-md-3 col-12 mt-2">
+                <div class="diary-row col-12 p-2">
+                    <form action="" method="post" class="col-1 form-group d-flex flex-row">
+                        <label for="isDisplay">Display</label>
+                        <input type="checkbox" class="ms-1" name="display" value="done" id="isDisplay">
+                    </form>
+                    <div class="diary-content">
+                        
+                    </div>
                 </div>
-                
             </div>
         </div>
-        
     </div>
+
+    
 </body>
 </html>
